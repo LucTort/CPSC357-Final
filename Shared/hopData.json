@@ -1,0 +1,44 @@
+
+[
+    {
+        "id": "aa32jj887hhg55",
+        "name": "Halo Reach",
+        "description": "The hop takes place in the year 2552, where humanity is locked in a war with the alien Covenant. Players control Noble Six, a member of an elite supersoldier squad, when the human world known as Reach falls under Covenant attack. ",
+        "genre": "First-Person-Shooter",
+        "console": "Xbox 360, Xbox One, PC",
+        "imageName": "Halo-_Reach_box_art"
+    },
+    {
+        "id": "bb32jj887hhg77",
+        "name": "Disco Elysium",
+        "description": "The hop takes place in a large city still recovering from a war decades prior to the hop's start, with players taking the role of an amnesiac detective who has been tasked with solving a murder mystery. During the investigation, he comes to recall events about his own past as well as current forces trying to affect the city.",
+        "genre": "RPG",
+        "console": "    Microsoft Windows, macOS, PlayStation 4,PlayStation 5, Stadia, Nintendo Switch, Xbox One, Xbox Series X/S",
+        "imageName": "Disco_Elysium_Poster"
+    },
+    {
+        "id": "cc32jj887hhg66",
+        "name": "Half-Life",
+        "description": "Players assume the role of Gordon Freeman, a scientist who must escape the Black Mesa Research Facility after it is invaded by aliens. The core hopplay consists of fighting alien and human enemies with a variety of weapons and solving puzzles.",
+        "genre": "First-Person-Shooter",
+        "console": "Windows, PlayStation 2, OS X, Linux",
+        "imageName": "Half-Life_Cover_Art"
+    },
+    {
+        "id": "dd32jj887hhg88",
+        "name": "Hyper Light Drifter",
+        "description": "Hyper Light Drifter is a 2D action role-playing hop fashioned after The Legend of Zelda: A Link to the Past, rendered in a pixelated style comparable to Superbrothers: Sword & Sworcery EP. The player controls the Drifter, a character that has access to technology that has long been forgotten by the inhabitants of the hop's world and is suffering from an unspecified illness.",
+        "genre": "Action/Adventure",
+        "console": "Linux, Microsoft Windows, OS X, PlayStation 4, Xbox One, Nintendo Switch, iOS",
+        "imageName": "HyperLightDrifterBoxArt"
+    },
+    {
+        "id": "ee32jj887hhg99",
+        "name": "Animal Crossing: New Horizons",
+        "description": "In New Horizons, the player controls a character who moves to a deserted island after purchasing a getaway package from Tom Nook, playing the hop in a nonlinear fashion and developing the island as they choose. They can gather and craft items, customize the island, and develop it into a community of anthropomorphic animals. ",
+        "genre": "Farming",
+        "console": "Nintendo Switch",
+        "imageName": "Animal_Crossing_New_Horizons"
+    }
+    
+]

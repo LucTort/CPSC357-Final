@@ -1,5 +1,5 @@
 //
-//  GameStore.swift
+//  HopStore.swift
 //  CPSC357_Project_2
 //
 //  Created by cpsc on 10/28/21.
@@ -9,9 +9,9 @@
 
 import SwiftUI
 import Combine
-class GameStore : ObservableObject {
-    @Published var games: [Game]
-    init (games: [Game] = []) {
-        self.games = games
+class HopStore : ObservableObject {
+    @Published var hops: [Hop]
+    init (hops: [Hop] = []) {
+        self.hops = hops
     }
 }

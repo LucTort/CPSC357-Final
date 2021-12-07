@@ -1,5 +1,5 @@
 //
-//  GameData.swift
+//  HopData.swift
 //  CPSC357_Project_2
 //
 //  Created by cpsc on 10/28/21.
@@ -10,7 +10,7 @@
 
 import UIKit
 import SwiftUI
-var gameData: [Game] = loadJson("gameData.json")
+var hopData: [Hop] = loadJson("hopData.json")
 func loadJson<T: Decodable>(_ filename: String) -> T {
     let data: Data
     guard let file = Bundle.main.url(forResource: filename,

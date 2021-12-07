@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @StateObject private var gameStore : GameStore = GameStore(games: gameData)
+    @StateObject private var hopStore : HopStore = HopStore(hops: hopData)
     
     var body: some View
     {
@@ -19,15 +19,15 @@ struct ContentView: View {
         {
            List
             {
-                ForEach (gameStore.games) { game in
-                    ListCell(game: game)
+                ForEach (hopStore.hops) { hop in
+                    ListCell(hop: hop)
                 }
                 .onDelete(perform: deleteItems)
                 .onMove(perform: moveItems)
             }
-            .navigationBarTitle(Text("Video Games"))
+            .navigationBarTitle(Text("Video Hops"))
             .foregroundColor(.red)
-            .navigationBarItems(leading: NavigationLink(destination:  AddNewGame(gameStore: self.gameStore)) {
+            .navigationBarItems(leading: NavigationLink(destination:  AddNewHop(hopStore: self.hopStore)) {
                 
                 
                 Text("Add")
@@ -38,12 +38,12 @@ struct ContentView: View {
     }
     func deleteItems(at offsets: IndexSet)
     {
-        gameStore.games.remove(atOffsets: offsets)
+        hopStore.hops.remove(atOffsets: offsets)
     }
 
     func moveItems(from source: IndexSet, to destination: Int)
     {
-        gameStore.games.move(fromOffsets: source, toOffset: destination)
+        hopStore.hops.move(fromOffsets: source, toOffset: destination)
     }
 }
 
@@ -51,17 +51,17 @@ struct ContentView: View {
 
 
 //SUBVIEW
-//Shows a list of the games which can be selected
+//Shows a list of the hops which can be selected
 struct ListCell: View {
-    var game: Game
+    var hop: Hop
     var body: some View {
-        NavigationLink(destination: GameDetail(selectedGame: game)) {
+        NavigationLink(destination: HopDetail(selectedHop: hop)) {
             HStack {
-                Image(game.imageName)
+                Image(hop.imageName)
                     .resizable()
                     .aspectRatio(contentMode:.fit)
                     .frame(width: 100, height: 60)
-                Text(game.name)
+                Text(hop.name)
             }
         }
     }

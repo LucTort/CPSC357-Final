@@ -1,5 +1,5 @@
 //
-//  GameDetail.swift
+//  HopDetail.swift
 //  CPSC357_Project_2
 //
 //  Created by cpsc on 10/28/21.
@@ -9,34 +9,34 @@
 
 import SwiftUI
 //extension UIViewController {
-struct GameDetail: View {
-    let selectedGame: Game
+struct HopDetail: View {
+    let selectedHop: Hop
 var body: some View {
     Form {
-        Section(header: Text("Game Details")) {
-            Image(selectedGame.imageName)
+        Section(header: Text("Hop Details")) {
+            Image(selectedHop.imageName)
                 .resizable()
                 .cornerRadius(12.0)
                 .aspectRatio(contentMode: .fit)
                 .padding()
                 .foregroundColor(.red)
-            Text(selectedGame.name)
+            Text(selectedHop.name)
                 .font(.headline)
-            Text(selectedGame.description)
+            Text(selectedHop.description)
                 .font(.body)
             VStack (alignment: .leading) {
                 Text("Genre")
                     .font(.headline)
-                Text(selectedGame.genre)
+                Text(selectedHop.genre)
                     .font(.body)
                 Spacer()
                 Text("Platforms")
                     .font(.headline)
-                Text(selectedGame.console)
+                Text(selectedHop.console)
                     .font(.body)
                 Spacer()
                 //if is hybrid, show this image
-//                Image(systemName: selectedGame.isHybrid ?
+//                Image(systemName: selectedHop.isHybrid ?
 //                      "checkmark.circle" : "xmark.circle" )
             }
         }
@@ -45,9 +45,9 @@ var body: some View {
 }
 
 //Creates structure for the preview to use
-struct GameDetail_Previews: PreviewProvider {
+struct HopDetail_Previews: PreviewProvider {
     static var previews: some View {
-        GameDetail(selectedGame: gameData[0])
+        HopDetail(selectedHop: hopData[0])
     }
 }
 
