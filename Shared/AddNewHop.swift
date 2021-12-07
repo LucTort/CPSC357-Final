@@ -14,11 +14,11 @@ struct AddNewHop: View
 {
     
     @StateObject var hopStore : HopStore
-    @State private var name: String = ""
-    @State private var weight: Double = 0.0;
-    @State private var alphaAcidContent: Double
-    @State private var postBoilVol: Double
-    @State private var boilTime: Int
+    @State public var name: String = ""
+    @State public var weight: Double = 0.0;
+    @State public var alphaAcidContent: Double
+    @State public var postBoilVol: Double
+    @State public var boilTime: Int
     
     var body: some View {
         Form {
@@ -28,10 +28,10 @@ struct AddNewHop: View
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 DataInput(title: "Name", userInput: $name)
-                DataInput(title: "Weight", userInput: $weight)
-                DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContent)
-                DataInput(title: "Post Boil Volumne", userInput: $postBoilVol)
-                DataInput(title:"Boil Time", userInput: $boilTime)
+//                DataInput(title: "Weight", userInput: $weight)
+//                DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContent)
+//                DataInput(title: "Post Boil Volumne", userInput: $postBoilVol)
+//                DataInput(title:"Boil Time", userInput: $boilTime)
                 
 //                {
 ////                Toggle(isOn: $isHybrid)

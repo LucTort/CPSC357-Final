@@ -24,18 +24,22 @@ var body: some View {
                 .foregroundColor(.red)
             Text(selectedHop.name)
                 .font(.headline)
-            Text(selectedHop.description)
+            Text(selectedHop.weight)
                 .font(.body)
             VStack (alignment: .leading) {
                 Text("Genre")
                     .font(.headline)
-                Text(selectedHop.genre)
+                Text(selectedHop.alphaAcidContent)
                     .font(.body)
                 Spacer()
                 Text("Platforms")
                     .font(.headline)
-                Text(selectedHop.console)
+                Text(selectedHop.postBoilVol)
                     .font(.body)
+                Spacer()
+                Text(selectedHop.boilTime)
+                    .font(.body)
+            
                 Spacer()
 
             }

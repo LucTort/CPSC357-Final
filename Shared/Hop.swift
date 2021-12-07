@@ -10,6 +10,8 @@
 import SwiftUI
 
 struct Hop : Codable, Identifiable {
+    var id: String
+    
     
     /*
 var id: String
@@ -22,10 +24,10 @@ var imageName: String
     
     // member variables
      var name: String
-     var weight: Double
-     var alphaAcidContent: Double
-     var postBoilVol: Double
-     var boilTime: Int
+     var weight: String
+     var alphaAcidContent: String
+     var postBoilVol: String
+     var boilTime: String
      var imageName: String
     
     
