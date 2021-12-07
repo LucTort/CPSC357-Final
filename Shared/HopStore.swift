@@ -9,9 +9,9 @@
 
 import SwiftUI
 import Combine
-class GameStore : ObservableObject {
-    @Published var games: [Game]
-    init (games: [Game] = []) {
-        self.games = games
+class HopStore : ObservableObject {
+    @Published var hops: [Hop]
+    init (hops: [Hop] = []) {
+        self.hops = hops
     }
 }

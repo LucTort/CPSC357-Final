@@ -10,7 +10,8 @@
 
 import UIKit
 import SwiftUI
-var gameData: [Game] = loadJson("gameData.json")
+
+var hopData: [Hop] = loadJson("hopData.json")
 func loadJson<T: Decodable>(_ filename: String) -> T {
     let data: Data
     guard let file = Bundle.main.url(forResource: filename,
