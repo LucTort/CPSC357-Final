@@ -35,7 +35,6 @@ struct AddNewHop: View
             }
             Button(action: addNewHop) {
                 Text("Add Hop")
-                    .foregroundColor(.red)
             
             }
             

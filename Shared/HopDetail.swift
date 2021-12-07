@@ -19,7 +19,6 @@ var body: some View {
                 .cornerRadius(12.0)
                 .aspectRatio(contentMode: .fit)
                 .padding()
-                .foregroundColor(.red)
             Text(selectedHop.name)
                 .font(.headline)
             Text(selectedHop.description)

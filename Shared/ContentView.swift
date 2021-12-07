@@ -26,14 +26,11 @@ struct ContentView: View {
                 .onMove(perform: moveItems)
             }
             .navigationBarTitle(Text("Video Hops"))
-            .foregroundColor(.red)
             .navigationBarItems(leading: NavigationLink(destination:  AddNewHop(hopStore: self.hopStore)) {
                 
                 
                 Text("Add")
-                    .foregroundColor(.red)
             }, trailing: EditButton())
-            .foregroundColor(.red)
         }
     }
     func deleteItems(at offsets: IndexSet)
