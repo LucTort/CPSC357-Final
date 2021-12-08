@@ -21,7 +21,7 @@ var body: some View {
                 .padding()
             Text(selectedHop.name)
                 .font(.headline)
-            Text(selectedHop.description)
+            Text(String(format: "%f", selectedHop.weight))
                 .font(.body)
             VStack (alignment: .leading) {
                 Text("Genre")

@@ -12,9 +12,15 @@ struct AddNewHop: View
 {
     @StateObject var hopStore : HopStore
     @State private var name: String = ""
-    @State private var description: String = ""
+    @State private var weight: String = "0.0"
     @State private var genre: String = ""
     @State private var console: String = ""
+    
+    let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
     
     var body: some View {
         Form {
@@ -24,7 +30,26 @@ struct AddNewHop: View
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 DataInput(title: "Name", userInput: $name)
-                DataInput(title: "Description", userInput: $description)
+                
+                
+                Picker(selection: .constant(1),
+                        label: Text("Picker"),
+                        content: {
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                        })
+                
+                
+                
+                
+                
+                
+                
+//                TextField("Enter the weight of your hops", value: $weight, formatter: formatter)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    .padding()
+//
+                //DataInput(title: "Weight", userInput: $weight)
                 DataInput(title: "Genre", userInput: $genre)
                 DataInput(title: "Console", userInput: $console)
 //                {
@@ -45,7 +70,7 @@ struct AddNewHop: View
     //Creates a new Hop object with the relevant data and adds it to the hopStore
     func addNewHop() {
         let newHop = Hop(id: UUID().uuidString,
-                         name: name, description: description, genre: genre, console: console, imageName: "340px-Hop-Boy-FL" )
+                         name: name, weight: weight, genre: genre, console: console, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
 //        ContentView()
         }

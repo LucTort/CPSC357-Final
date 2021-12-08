@@ -9,9 +9,10 @@
 
 import SwiftUI
 struct Hop : Codable, Identifiable {
-var id: String
+var id: String//required forname identifiable
 var name: String
-var description: String
+var weight: String
+//var description: String //from game version
 var genre: String
 var console: String
 var imageName: String
