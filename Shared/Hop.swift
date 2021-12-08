@@ -9,11 +9,12 @@
 
 import SwiftUI
 struct Hop : Codable, Identifiable {
-var id: String//required forname identifiable
-var name: String
-var weight: String
-//var description: String //from game version
-var genre: String
-var console: String
-var imageName: String
+    var id: String//required forname identifiable
+    var name: String
+    var weight: String
+    var alphaAcidContent: String
+    //var description: String //from game version
+    //var genre: String
+    var console: String
+    var imageName: String
 }

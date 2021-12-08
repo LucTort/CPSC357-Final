@@ -24,9 +24,9 @@ var body: some View {
             Text(String(format: "%f", selectedHop.weight))
                 .font(.body)
             VStack (alignment: .leading) {
-                Text("Genre")
+                Text("Alpha Acid Content")
                     .font(.headline)
-                Text(selectedHop.genre)
+                Text(selectedHop.alphaAcidContent)
                     .font(.body)
                 Spacer()
                 Text("Platforms")

@@ -13,7 +13,7 @@ struct AddNewHop: View
     @StateObject var hopStore : HopStore
     @State private var name: String = ""
     @State private var weight: String = "0.0"
-    @State private var genre: String = ""
+    @State private var alphaAcidContent: String = "2"
     @State private var console: String = ""
     
     let formatter: NumberFormatter = {
@@ -50,7 +50,7 @@ struct AddNewHop: View
 //                    .padding()
 //
                 //DataInput(title: "Weight", userInput: $weight)
-                DataInput(title: "Genre", userInput: $genre)
+                DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContent)
                 DataInput(title: "Console", userInput: $console)
 //                {
 ////                Toggle(isOn: $isHybrid)
@@ -70,7 +70,7 @@ struct AddNewHop: View
     //Creates a new Hop object with the relevant data and adds it to the hopStore
     func addNewHop() {
         let newHop = Hop(id: UUID().uuidString,
-                         name: name, weight: weight, genre: genre, console: console, imageName: "340px-Hop-Boy-FL" )
+                         name: name, weight: weight, alphaAcidContent: alphaAcidContent, console: console, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
 //        ContentView()
         }
