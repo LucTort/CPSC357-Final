@@ -49,7 +49,7 @@ struct AddNewHop: View
 //                    .textFieldStyle(RoundedBorderTextFieldStyle())
 //                    .padding()
 //
-                //DataInput(title: "Weight", userInput: $weight)
+                DataInput(title: "Weight", userInput: $weight)
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContent)
                 DataInput(title: "Console", userInput: $console)
 //                {
