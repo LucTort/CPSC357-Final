@@ -17,6 +17,7 @@ struct ContentView: View {
     {
         NavigationView
         {
+            VStack{
            List
             {
                 ForEach (hopStore.hops) { hop in
@@ -31,6 +32,8 @@ struct ContentView: View {
                 
                 Text("Add")
             }, trailing: EditButton())
+            Wart()
+            }
         }
     }
     func deleteItems(at offsets: IndexSet)
@@ -52,15 +55,24 @@ struct ContentView: View {
 struct ListCell: View {
     var hop: Hop
     var body: some View {
-        NavigationLink(destination: HopDetail(selectedHop: hop)) {
-            HStack {
-                Image(hop.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode:.fit)
-                    .frame(width: 100, height: 60)
-                Text(hop.name)
+        VStack{
+            NavigationLink(destination: HopDetail(selectedHop: hop)) {
+                HStack {
+                    Image(hop.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode:.fit)
+                        .frame(width: 100, height: 60)
+                    Text(hop.name)
+                }
             }
         }
+    }
+}
+
+struct Wart: View {
+    @State private var sweetWartContentStr: String = "0.0"
+    var body: some View{
+        DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
     }
 }
 
