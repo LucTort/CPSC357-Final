@@ -12,7 +12,7 @@ struct Hop : Codable, Identifiable {
     var id: String//required forname identifiable
     var name: String
     var weight: Float
-    var alphaAcidContent: String
+    var alphaAcidContent: Float
     //var description: String //from game version
     //var genre: String
     var console: String

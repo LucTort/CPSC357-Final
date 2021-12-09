@@ -25,7 +25,7 @@ var body: some View {
             VStack (alignment: .leading) {
                 Text("Alpha Acid Content")
                     .font(.headline)
-                Text(selectedHop.alphaAcidContent)
+                Text(String(format: "%f", selectedHop.alphaAcidContent))
                     .font(.body)
                 Spacer()
                 Text("Weight")
