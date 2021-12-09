@@ -21,12 +21,16 @@ var body: some View {
                 .padding()
             Text(selectedHop.name)
                 .font(.headline)
-            Text(String(format: "%f", selectedHop.weight))
-                .font(.body)
+            
             VStack (alignment: .leading) {
                 Text("Alpha Acid Content")
                     .font(.headline)
                 Text(selectedHop.alphaAcidContent)
+                    .font(.body)
+                Spacer()
+                Text("Weight")
+                    .font(.headline)
+                Text(String(format: "%f", selectedHop.weight))
                     .font(.body)
                 Spacer()
                 Text("Platforms")

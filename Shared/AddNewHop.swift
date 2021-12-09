@@ -12,7 +12,8 @@ struct AddNewHop: View
 {
     @StateObject var hopStore : HopStore
     @State private var name: String = ""
-    @State private var weight: String = "0.0"
+    @State private var weightStr: String = "0.0"
+    @State private var weight: Float = 0.0
     @State private var alphaAcidContent: String = "2"
     @State private var console: String = ""
     
@@ -45,11 +46,11 @@ struct AddNewHop: View
                 
                 
                 
-//                TextField("Enter the weight of your hops", value: $weight, formatter: formatter)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .padding()
-//
-                DataInput(title: "Weight", userInput: $weight)
+                TextField("Enter the weight of your hops", value: $weight, formatter: formatter)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                DataInput(title: "Weight", userInput: $weightStr)
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContent)
                 DataInput(title: "Console", userInput: $console)
 //                {
@@ -70,7 +71,7 @@ struct AddNewHop: View
     //Creates a new Hop object with the relevant data and adds it to the hopStore
     func addNewHop() {
         let newHop = Hop(id: UUID().uuidString,
-                         name: name, weight: weight, alphaAcidContent: alphaAcidContent, console: console, imageName: "340px-Hop-Boy-FL" )
+                         name: name, weight: Float(weightStr) ?? 0, alphaAcidContent: alphaAcidContent, console: console, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
 //        ContentView()
         }
