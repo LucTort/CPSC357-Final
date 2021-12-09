@@ -15,6 +15,6 @@ struct Hop : Codable, Identifiable {
     var alphaAcidContent: Float
     //var description: String //from game version
     //var genre: String
-    var console: String
+    var boilTime: Int
     var imageName: String
 }

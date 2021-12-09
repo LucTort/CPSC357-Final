@@ -16,7 +16,8 @@ struct AddNewHop: View
     @State private var weight: Float = 0.0
     @State private var alphaAcidContentStr: String = "2"
     @State private var alphaAcidContent: Float = 0.0
-    @State private var console: String = ""
+    @State private var boilTimeStr: String = "Boil tyme"
+    @State private var boilTime: Int = 0
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -34,26 +35,18 @@ struct AddNewHop: View
                 DataInput(title: "Name", userInput: $name)
                 
                 
-                Picker(selection: .constant(1),
-                        label: Text("Picker"),
-                        content: {
-                            Text("1").tag(1)
-                            Text("2").tag(2)
-                        })
+//                Picker(selection: .constant(1),
+//                        label: Text("Picker"),
+//                        content: {
+//                            Text("1").tag(1)
+//                            Text("2").tag(2)
+//                        })
                 
                 
                 
-                
-                
-                
-                
-                TextField("Enter the weight of your hops", value: $weight, formatter: formatter)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
                 DataInput(title: "Weight", userInput: $weightStr)
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContentStr)
-                DataInput(title: "Console", userInput: $console)
+                DataInput(title: "Boil Time", userInput: $boilTimeStr)
 //                {
 ////                Toggle(isOn: $isHybrid)
 //
@@ -72,7 +65,7 @@ struct AddNewHop: View
     //Creates a new Hop object with the relevant data and adds it to the hopStore
     func addNewHop() {
         let newHop = Hop(id: UUID().uuidString,
-                         name: name, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, console: console, imageName: "340px-Hop-Boy-FL" )
+                         name: name, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
 //        ContentView()
         }
