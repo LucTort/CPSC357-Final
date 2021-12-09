@@ -12,27 +12,35 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var hopStore : HopStore = HopStore(hops: hopData)
+    @State var isDoBrew: Bool = false
     
     var body: some View
     {
-        NavigationView
+        if (isDoBrew)
         {
-            VStack{
-           List
+            AppHome(isDoBrew: $isDoBrew)
+        }
+        else
+        {
+            NavigationView
             {
-                ForEach (hopStore.hops) { hop in
-                    ListCell(hop: hop)
-                }
-                .onDelete(perform: deleteItems)
-                .onMove(perform: moveItems)
-            }
-            .navigationBarTitle(Text("Video Hops"))
-            .navigationBarItems(leading: NavigationLink(destination:  AddNewHop(hopStore: self.hopStore)) {
-                
-                
-                Text("Add")
-            }, trailing: EditButton())
-            Wart()
+                VStack{
+                   List
+                    {
+                        ForEach (hopStore.hops) { hop in
+                            ListCell(hop: hop)
+                        }
+                        .onDelete(perform: deleteItems)
+                        .onMove(perform: moveItems)
+                    }
+                    .navigationBarTitle(Text("Hops"))
+                    .navigationBarItems(leading: NavigationLink(destination:  AddNewHop(hopStore: self.hopStore)) {
+                        
+                        
+                        Text("Add")
+                    }, trailing: EditButton())
+                    Wart(isDoBrew: $isDoBrew)
+                    }
             }
         }
     }
@@ -71,8 +79,24 @@ struct ListCell: View {
 
 struct Wart: View {
     @State private var sweetWartContentStr: String = "0.0"
+    @Binding var isDoBrew: Bool
     var body: some View{
         DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
+        
+        Spacer()
+        
+        //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
+        Button(action: {
+            self.isDoBrew = !self.isDoBrew
+        }) {
+            Text("Do the Brew")
+                .padding(10.0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .stroke(lineWidth: 2.0)
+                )
+        }
+        Spacer()
     }
 }
 
@@ -83,5 +107,27 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+//https://stackoverflow.com/questions/56797333/swiftui-change-view-with-button
+struct AppHome: View {
+    @Binding var isDoBrew: Bool
+    
+    var body: some View {
+        VStack {
+        Text("wOW")
+            Button(action: {
+                self.isDoBrew = !self.isDoBrew
+            }) {
+                Text("Go Back")
+                    .padding(10.0)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .stroke(lineWidth: 2.0)
+                    )
+            }
+            Spacer()
+        }
+    }
+}
 
 
