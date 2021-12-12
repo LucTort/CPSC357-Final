@@ -19,7 +19,11 @@ struct ContentView: View {
         if (isDoBrew)
         {
             VStack {
-            Text("wOW")
+                //Display hop data
+                ForEach (hopStore.hops) { hop in
+                    ListVal(hop: hop)
+                }
+                //End display hop data
                 Button(action: {
                     self.isDoBrew = !self.isDoBrew
                 }) {
@@ -86,6 +90,23 @@ struct ListCell: View {
                     Text(hop.name)
                 }
             }
+        }
+    }
+}
+struct ListVal: View {
+    var hop: Hop
+    var body: some View {
+        VStack{
+            Text("Hop weight \(hop.weight)")
+//            NavigationLink(destination: HopDetail(selectedHop: hop)) {
+//                HStack {
+//                    Image(hop.imageName)
+//                        .resizable()
+//                        .aspectRatio(contentMode:.fit)
+//                        .frame(width: 100, height: 60)
+//                    Text(hop.name)
+//                }
+//            }
         }
     }
 }
