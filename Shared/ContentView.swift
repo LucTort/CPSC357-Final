@@ -18,7 +18,20 @@ struct ContentView: View {
     {
         if (isDoBrew)
         {
-            AppHome(isDoBrew: $isDoBrew)
+            VStack {
+            Text("wOW")
+                Button(action: {
+                    self.isDoBrew = !self.isDoBrew
+                }) {
+                    Text("Go Back")
+                        .padding(10.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .stroke(lineWidth: 2.0)
+                        )
+                }
+                Spacer()
+            }
         }
         else
         {
@@ -108,26 +121,29 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-//https://stackoverflow.com/questions/56797333/swiftui-change-view-with-button
-struct AppHome: View {
-    @Binding var isDoBrew: Bool
-    
-    var body: some View {
-        VStack {
-        Text("wOW")
-            Button(action: {
-                self.isDoBrew = !self.isDoBrew
-            }) {
-                Text("Go Back")
-                    .padding(10.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 2.0)
-                    )
-            }
-            Spacer()
-        }
-    }
-}
+
+//Original view. This has since been moved into the main view to simplify things
+
+////https://stackoverflow.com/questions/56797333/swiftui-change-view-with-button
+//struct AppHome: View {
+//    @Binding var isDoBrew: Bool
+//
+//    var body: some View {
+//        VStack {
+//        Text("wOW")
+//            Button(action: {
+//                self.isDoBrew = !self.isDoBrew
+//            }) {
+//                Text("Go Back")
+//                    .padding(10.0)
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 10.0)
+//                            .stroke(lineWidth: 2.0)
+//                    )
+//            }
+//            Spacer()
+//        }
+//    }
+//}
 
 
