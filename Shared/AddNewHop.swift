@@ -54,18 +54,6 @@ struct AddNewHop: View
         let newHop = Hop(id: UUID().uuidString,
                          name: name, volume: Float(volumeStr) ?? 0, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
-        
-        //IBU calculation
-        let e: Float = 2.71828
-        let sweetWart: Float = 1.05
-        let BF: Float = (1.65 * pow(0.000125, (sweetWart-1)))
-        let BTF: Float = ( (1.0 - pow(e, -0.04 * Float(newHop.boilTime)) )/4.15)
-        let AAU: Float = BF * BTF
-        let AAAPV: Float = ((newHop.alphaAcidContent * newHop.weight * 7490) / newHop.volume)
-    
-        
-        hopStore.totalIBU += AAU * AAAPV
-//        ContentView()
         }
     }
     

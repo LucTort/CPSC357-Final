@@ -26,10 +26,7 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .bold()
                 
-                let sumTest: Float = calculate(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0)
-                Text("Testing Weight: \(sumTest)")
-                
-                Text("Total IBU: \(hopStore.totalIBU)")
+                Text("Total IBU: \(calculateTotalIBU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
                 Text("Hop Aroma Units: \(hopStore.totalHAU)")
                 Text("Hop Flavor Units: \(hopStore.totalHFU)")
                 
@@ -94,14 +91,30 @@ struct ContentView: View {
         hopStore.hops.move(fromOffsets: source, toOffset: destination)
     }
     
-    func calculate(hopStore: HopStore, sweetWart: Float )->Float{
-        var sumWeight: Float = 0.0
+    
+    
+    //     ____        __              __     ______      __           __      __  _
+    //    / __ \__  __/ /_____  __  __/ /_   / ____/___ _/ /______  __/ /___ _/ /_(_)___  ____  _____
+    //   / / / / / / / __/ __ \/ / / / __/  / /   / __ `/ / ___/ / / / / __ `/ __/ / __ \/ __ \/ ___/
+    //  / /_/ / /_/ / /_/ /_/ / /_/ / /_   / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ / /_/ / / / (__  )
+    //  \____/\__,_/\__/ .___/\__,_/\__/   \____/\__,_/_/\___/\__,_/_/\__,_/\__/_/\____/_/ /_/____/
+    //                /_/
+    func calculateTotalIBU(hopStore: HopStore, sweetWart: Float )->Float{
+        var sumIBU: Float = 0.0
         
         for hop in hopStore.hops{
             
-            sumWeight += hop.weight
+            //IBU calculation variables
+            let e: Float = 2.71828
+            let sweetWart: Float = 1.05
+            let BF: Float = (1.65 * pow(0.000125, (sweetWart-1)))
+            let BTF: Float = ( (1.0 - pow(e, -0.04 * Float(hop.boilTime)) )/4.15)
+            let AAU: Float = BF * BTF
+            let AAAPV: Float = ((hop.alphaAcidContent * hop.weight * 7490) / hop.volume)
+            
+            sumIBU += AAU * AAAPV
         }
-        return sumWeight;
+        return sumIBU;
     }
     
     
