@@ -46,9 +46,6 @@ var body: some View {
                 Text(String(selectedHop.boilTime))
                     .font(.body)
                 Spacer()
-                //if is hybrid, show this image
-//                Image(systemName: selectedHop.isHybrid ?
-//                      "checkmark.circle" : "xmark.circle" )
             }
         }
     }

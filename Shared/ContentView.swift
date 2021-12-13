@@ -133,15 +133,6 @@ struct ListVal: View {
     var body: some View {
         VStack{
             Text("Hop weight \(hop.weight)")
-//            NavigationLink(destination: HopDetail(selectedHop: hop)) {
-//                HStack {
-//                    Image(hop.imageName)
-//                        .resizable()
-//                        .aspectRatio(contentMode:.fit)
-//                        .frame(width: 100, height: 60)
-//                    Text(hop.name)
-//                }
-//            }
         }
     }
 }
@@ -161,30 +152,5 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
-
-//Original view. This has since been moved into the main view to simplify things
-
-////https://stackoverflow.com/questions/56797333/swiftui-change-view-with-button
-//struct AppHome: View {
-//    @Binding var isDoBrew: Bool
-//
-//    var body: some View {
-//        VStack {
-//        Text("wOW")
-//            Button(action: {
-//                self.isDoBrew = !self.isDoBrew
-//            }) {
-//                Text("Go Back")
-//                    .padding(10.0)
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 10.0)
-//                            .stroke(lineWidth: 2.0)
-//                    )
-//            }
-//            Spacer()
-//        }
-//    }
-//}
 
 
