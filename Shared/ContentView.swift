@@ -20,7 +20,15 @@ struct ContentView: View {
         {
             VStack {
                 //Display hop data
+                
+                Text("Brew Report") // fix display fonts
+                    .font(.largeTitle)
+                    .bold()
+                
                 Text("Total IBU: \(hopStore.totalIBU)")
+                Text("Hop Aroma Units: \(hopStore.totalHAU)")
+                Text("Hop Flavor Units: \(hopStore.totalHFU)")
+                
                 //End display hop data
                 Button(action: {
                     self.isDoBrew = !self.isDoBrew
@@ -118,15 +126,6 @@ struct ListVal: View {
 //                    Text(hop.name)
 //                }
 //            }
-        }
-    }
-}
-
-struct TotalIBU: View {
-    var hop: Hop
-    var body: some View {
-        VStack{
-
         }
     }
 }
