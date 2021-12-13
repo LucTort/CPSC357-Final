@@ -15,7 +15,6 @@ class HopStore : ObservableObject {
     @Published var totalHFU: Float
     @Published var totalHAU: Float
     
-    
     init (hops: [Hop] = []) {
         self.hops = hops
         totalIBU = 0

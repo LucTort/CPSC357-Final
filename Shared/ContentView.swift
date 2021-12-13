@@ -13,6 +13,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var hopStore : HopStore = HopStore(hops: hopData)
     @State var isDoBrew: Bool = false
+    @State private var sweetWartContentStr: String = "0.0"
     
     var body: some View
     {
@@ -24,6 +25,9 @@ struct ContentView: View {
                 Text("Brew Report") // fix display fonts
                     .font(.largeTitle)
                     .bold()
+                
+                let sumTest: Float = calculate(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0)
+                Text("Testing Weight: \(sumTest)")
                 
                 Text("Total IBU: \(hopStore.totalIBU)")
                 Text("Hop Aroma Units: \(hopStore.totalHAU)")
@@ -62,7 +66,7 @@ struct ContentView: View {
                         
                         Text("Add")
                     }, trailing: EditButton())
-                    Wart(isDoBrew: $isDoBrew)
+                    DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
                     
                     //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
                     Button(action: {
@@ -88,6 +92,14 @@ struct ContentView: View {
     func moveItems(from source: IndexSet, to destination: Int)
     {
         hopStore.hops.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    func calculate(hopStore: HopStore, sweetWart: Float )->Float{
+        var sumWeight: Float = 0.0;
+        for hop in hopStore.hops{
+            sumWeight += hop.weight;
+        }
+        return sumWeight;
     }
 }
 
