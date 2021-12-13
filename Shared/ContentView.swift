@@ -20,9 +20,7 @@ struct ContentView: View {
         {
             VStack {
                 //Display hop data
-                ForEach (hopStore.hops) { hop in
-                    ListVal(hop: hop)
-                }
+                Text("Total IBU: \(hopStore.totalIBU)")
                 //End display hop data
                 Button(action: {
                     self.isDoBrew = !self.isDoBrew
@@ -107,6 +105,15 @@ struct ListVal: View {
 //                    Text(hop.name)
 //                }
 //            }
+        }
+    }
+}
+
+struct TotalIBU: View {
+    var hop: Hop
+    var body: some View {
+        VStack{
+
         }
     }
 }

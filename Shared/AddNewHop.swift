@@ -67,6 +67,7 @@ struct AddNewHop: View
         let newHop = Hop(id: UUID().uuidString,
                          name: name, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
+        hopStore.totalIBU += 1
 //        ContentView()
         }
     }

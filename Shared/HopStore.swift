@@ -11,7 +11,9 @@ import SwiftUI
 import Combine
 class HopStore : ObservableObject {
     @Published var hops: [Hop]
+    @Published var totalIBU: Float
     init (hops: [Hop] = []) {
         self.hops = hops
+        totalIBU = 0
     }
 }
