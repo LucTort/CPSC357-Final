@@ -95,12 +95,16 @@ struct ContentView: View {
     }
     
     func calculate(hopStore: HopStore, sweetWart: Float )->Float{
-        var sumWeight: Float = 0.0;
+        var sumWeight: Float = 0.0
+        
         for hop in hopStore.hops{
-            sumWeight += hop.weight;
+            
+            sumWeight += hop.weight
         }
         return sumWeight;
     }
+    
+    
 }
 
 
