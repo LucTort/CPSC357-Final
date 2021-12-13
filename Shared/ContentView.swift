@@ -55,6 +55,19 @@ struct ContentView: View {
                         Text("Add")
                     }, trailing: EditButton())
                     Wart(isDoBrew: $isDoBrew)
+                    
+                    //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
+                    Button(action: {
+                        self.isDoBrew = !self.isDoBrew
+                    }) {
+                        Text("Do the Brew")
+                            .padding(10.0)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10.0)
+                                    .stroke(lineWidth: 2.0)
+                            )
+                    }
+                    
                     }
             }
         }
@@ -123,21 +136,6 @@ struct Wart: View {
     @Binding var isDoBrew: Bool
     var body: some View{
         DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
-        
-        Spacer()
-        
-        //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
-        Button(action: {
-            self.isDoBrew = !self.isDoBrew
-        }) {
-            Text("Do the Brew")
-                .padding(10.0)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .stroke(lineWidth: 2.0)
-                )
-        }
-        Spacer()
     }
 }
 
