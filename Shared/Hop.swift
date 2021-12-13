@@ -11,6 +11,7 @@ import SwiftUI
 struct Hop : Codable, Identifiable {
     var id: String//required forname identifiable
     var name: String
+    var volume: Float
     var weight: Float
     var alphaAcidContent: Float
     //var description: String //from game version

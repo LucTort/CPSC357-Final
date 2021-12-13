@@ -23,11 +23,19 @@ var body: some View {
                 .font(.headline)
             
             VStack (alignment: .leading) {
-                Text("Alpha Acid Content")
-                    .font(.headline)
-                Text(String(format: "%f", selectedHop.alphaAcidContent))
-                    .font(.body)
-                Spacer()
+                Group //This group is here because Swift doesn't like having too many things in a VStack
+                {
+                    Text("Alpha Acid Content")
+                        .font(.headline)
+                    Text(String(format: "%f", selectedHop.alphaAcidContent))
+                        .font(.body)
+                    Spacer()
+                    Text("Volume")
+                        .font(.headline)
+                    Text(String(format: "%f", selectedHop.volume))
+                        .font(.body)
+                    Spacer()
+                }
                 Text("Weight")
                     .font(.headline)
                 Text(String(format: "%f", selectedHop.weight))

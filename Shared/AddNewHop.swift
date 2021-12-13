@@ -12,6 +12,8 @@ struct AddNewHop: View
 {
     @StateObject var hopStore : HopStore
     @State private var name: String = ""
+    @State private var volumeStr: String = "0.0"
+    @State private var volume: Float = 0.0
     @State private var weightStr: String = "0.0"
     @State private var weight: Float = 0.0
     @State private var alphaAcidContentStr: String = "2"
@@ -33,25 +35,10 @@ struct AddNewHop: View
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 DataInput(title: "Name", userInput: $name)
-                
-                
-//                Picker(selection: .constant(1),
-//                        label: Text("Picker"),
-//                        content: {
-//                            Text("1").tag(1)
-//                            Text("2").tag(2)
-//                        })
-                
-                
-                
+                DataInput(title: "Brew Volume", userInput: $volumeStr)
                 DataInput(title: "Weight", userInput: $weightStr)
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContentStr)
                 DataInput(title: "Boil Time", userInput: $boilTimeStr)
-//                {
-////                Toggle(isOn: $isHybrid)
-//
-//                    Text("Hybrid").font(.headline)
-//                }.padding()
             }
             Button(action: addNewHop) {
                 Text("Add Hop")
@@ -65,7 +52,7 @@ struct AddNewHop: View
     //Creates a new Hop object with the relevant data and adds it to the hopStore
     func addNewHop() {
         let newHop = Hop(id: UUID().uuidString,
-                         name: name, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "340px-Hop-Boy-FL" )
+                         name: name, volume: Float(volumeStr) ?? 0, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "340px-Hop-Boy-FL" )
         hopStore.hops.append(newHop)
         hopStore.totalIBU += 1
 //        ContentView()
