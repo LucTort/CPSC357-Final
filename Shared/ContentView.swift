@@ -27,7 +27,7 @@ struct ContentView: View {
                     .bold()
                 
                 Text("Total IBU: \(calculateTotalIBU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
-                Text("Hop Aroma Units: \(hopStore.totalHAU)")
+                Text("Hop Aroma Units: \(calculateTotalHAU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
                 Text("Hop Flavor Units: \(calculateTotalHFU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
                 
                 //End display hop data
@@ -139,6 +139,24 @@ struct ContentView: View {
             sumHFU += MAAU * AAAPV * Float((FEtot / 100.0))
         }
         return sumHFU
+    }
+    
+    func calculateTotalHAU(hopStore: HopStore, sweetWart: Float )->Float{
+        var sumHAU: Float = 0.0
+        
+        for hop in hopStore.hops{
+            
+            //HFU calculation variables
+            let BF: Float = (1.65 * pow(0.000125, (sweetWart-1)))
+            let MAAU: Float = BF * 0.23438
+            
+            let AAAPV: Float = ((hop.alphaAcidContent * hop.weight * 7490) / hop.volume)
+            
+            let AE: Float = 100 / pow(100.0, (Float(hop.boilTime) / 25.0))
+            
+            sumHAU += MAAU * AAAPV * (AE / 100.0)
+        }
+        return sumHAU
     }
     
     
