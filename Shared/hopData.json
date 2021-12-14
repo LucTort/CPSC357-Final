@@ -3,10 +3,10 @@
     {
         "id": "aa32jj887hhg55",
         "name": "HOP 1",
-        "volume": 4.5,
-        "weight": 1.1,
-        "alphaAcidContent": 2.0,
-        "boilTime": 4,
+        "volume": 5,
+        "weight": 2,
+        "alphaAcidContent": 0.055,
+        "boilTime": 1,
         "imageName": "Halo-_Reach_box_art"
     },
 ]
