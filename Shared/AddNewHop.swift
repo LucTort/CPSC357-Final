@@ -35,10 +35,10 @@ struct AddNewHop: View
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 DataInput(title: "Name", userInput: $name)
-                DataInput(title: "Brew Volume", userInput: $volumeStr)
-                DataInput(title: "Weight", userInput: $weightStr)
+                DataInput(title: "Brew Volume (gal)", userInput: $volumeStr)
+                DataInput(title: "Weight (oz)", userInput: $weightStr)
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContentStr)
-                DataInput(title: "Boil Time", userInput: $boilTimeStr)
+                DataInput(title: "Boil Time (min)", userInput: $boilTimeStr)
             }
             Button(action: addNewHop) {
                 Text("Add Hop")

@@ -27,8 +27,14 @@ struct ContentView: View {
                     .bold()
                 
                 Text("Total IBU: \(calculateTotalIBU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
                 Text("Hop Aroma Units: \(calculateTotalHAU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
                 Text("Hop Flavor Units: \(calculateTotalHFU(hopStore: hopStore, sweetWart: Float(sweetWartContentStr) ?? 0))")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all)
                 
                 //End display hop data
                 Button(action: {
