@@ -73,15 +73,18 @@ struct ContentView: View
                     DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
                     
                     //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
-                    Button(action: { self.isDoBrew = !self.isDoBrew })
+                    Button(action: { self.isDoBrew = !self.isDoBrew } )
                     {
+                        
                         Text("Do the Brew")
+                            .disabled( sweetWartContentStr == "" ? true : false)
                             .padding(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(lineWidth: 2.0)
                             )
-                    }//END Button(action: { self.isDoBrew = !self.isDoBrew })
+                    }
+                    //END Button(action: { self.isDoBrew = !self.isDoBrew })
                     
                 }//END VStack
             }//END NavigationView
