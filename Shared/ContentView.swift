@@ -94,6 +94,8 @@ struct ContentView: View
         {
             VStack
             {
+                Image("BeerIcon")//comeback
+                    .resizable()
                 Text("The Art of Brewing!")
                     .font(.largeTitle)
                     .fontWeight(.bold)
