@@ -10,7 +10,8 @@
 import SwiftUI
 
 
-struct ContentView: View {
+struct ContentView: View
+{
     @StateObject private var hopStore : HopStore = HopStore(hops: hopData)
     @State var isDoBrew: Bool = false
     @State private var sweetWartContentStr: String = "0.0"
@@ -19,7 +20,8 @@ struct ContentView: View {
     {
         if (isDoBrew)
         {
-            VStack {
+            VStack
+            {
                 //Display hop data
                 
                 Text("Brew Report") // fix display fonts
@@ -36,66 +38,66 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.all)
                 
-                //End display hop data
-                Button(action: {
-                    self.isDoBrew = !self.isDoBrew
-                }) {
+                //END display hop data
+                
+                Button(action: { self.isDoBrew = !self.isDoBrew })
+                {
                     Text("Go Back")
                         .padding(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                        )
-                }
+                        )//END .overlay
+                }//END Button(action: { self.isDoBrew = !self.isDoBrew })
                 Spacer()
-            }
-        }
+            }//END VStack
+        }//END if (isDoBrew)
         else if(inputScreen)
         {
             NavigationView
             {
-                VStack{
-                   List
+                VStack
+                {
+                    List
                     {
-                        ForEach (hopStore.hops) { hop in
-                            ListCell(hop: hop)
-                        }
+                        ForEach (hopStore.hops) { hop in ListCell(hop: hop) }
                         .onDelete(perform: deleteItems)
                         .onMove(perform: moveItems)
-                    }
+                    }//END List
+                    
                     .navigationBarTitle(Text("Hops"))
-                    .navigationBarItems(leading: NavigationLink(destination:  AddNewHop(hopStore: self.hopStore)) {
-                        
-                        
+                    .navigationBarItems(leading: NavigationLink(destination:  AddNewHop(hopStore: self.hopStore))
+                    {
                         Text("Add")
                     }, trailing: EditButton())
                     DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
                     
                     //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
-                    Button(action: {
-                        self.isDoBrew = !self.isDoBrew
-                    }) {
+                    Button(action: { self.isDoBrew = !self.isDoBrew })
+                    {
                         Text("Do the Brew")
                             .padding(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(lineWidth: 2.0)
                             )
-                    }
+                    }//END Button(action: { self.isDoBrew = !self.isDoBrew })
                     
-                    }
-            }
-        } else{
-            VStack{
+                }//END VStack
+            }//END NavigationView
+        } 
+        else
+        {
+            VStack
+            {
                 Text("Welcome to HomeBrew (not the package manager)!")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.black)
                     .multilineTextAlignment(.center)
                 
-                Button(action: {
-                    self.inputScreen = !self.inputScreen
-                }) {
+                Button(action: { self.inputScreen = !self.inputScreen })
+                {
                     Text("Let's get brewing!")
                         .padding(10.0)
                         .overlay(
@@ -103,15 +105,21 @@ struct ContentView: View {
                                 .stroke(lineWidth: 2.0)
                         )
                     
-                }
-            }
-        }
-    }
+                }//END Button(action: { self.inputScreen = !self.inputScreen })
+            }//END VStack
+        }//END else of else if(inputScreen)
+    }//END var body: some View
+    
+    
+    
+    
+    //Deletes items from list
     func deleteItems(at offsets: IndexSet)
     {
         hopStore.hops.remove(atOffsets: offsets)
     }
 
+    //Moves items in list
     func moveItems(from source: IndexSet, to destination: Int)
     {
         hopStore.hops.move(fromOffsets: source, toOffset: destination)
@@ -125,10 +133,14 @@ struct ContentView: View {
     //  / /_/ / /_/ / /_/ /_/ / /_/ / /_   / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ / /_/ / / / (__  )
     //  \____/\__,_/\__/ .___/\__,_/\__/   \____/\__,_/_/\___/\__,_/_/\__,_/\__/_/\____/_/ /_/____/
     //                /_/
-    func calculateTotalIBU(hopStore: HopStore, sweetWart: Float )->Float{
+    
+    func calculateTotalIBU(hopStore: HopStore, sweetWart: Float )->Float
+    {
         var sumIBU: Float = 0.0
         
-        for hop in hopStore.hops{
+        //Looping through all Hops in list to accuratly calclulate outputs
+        for hop in hopStore.hops
+        {
             
             //IBU calculation variables
             let e: Float = 2.71828
@@ -139,14 +151,19 @@ struct ContentView: View {
             let AAAPV: Float = ((hop.alphaAcidContent * hop.weight * 7490) / hop.volume)
             
             sumIBU += AAU * AAAPV
-        }
+            
+        }//END for hop in hopStore.hops
+        
         return sumIBU
-    }
+    }//END  func calculateTotalIBU(hopStore: HopStore, sweetWart: Float )->Float
     
-    func calculateTotalHFU(hopStore: HopStore, sweetWart: Float )->Float{
+    func calculateTotalHFU(hopStore: HopStore, sweetWart: Float )->Float
+    {
         var sumHFU: Float = 0.0
         
-        for hop in hopStore.hops{
+        //Looping through each hop in the list
+        for hop in hopStore.hops
+        {
             
             //HFU calculation variables
             let BF: Float = (1.65 * pow(0.000125, (sweetWart-1)))
@@ -163,13 +180,20 @@ struct ContentView: View {
             let AAAPV: Float = ((hop.alphaAcidContent * hop.weight * 7490) / hop.volume)
             
             sumHFU += MAAU * AAAPV * Float((FEtot / 100.0))
-        }
+            
+        }//END for hop in hopStore.hops
+        
         return sumHFU
-    }
+        
+    }//END func calculateTotalHFU(hopStore: HopStore, sweetWart: Float )->Float
     
-    func calculateTotalHAU(hopStore: HopStore, sweetWart: Float )->Float{
+    
+    
+    func calculateTotalHAU(hopStore: HopStore, sweetWart: Float )->Float
+    {
         var sumHAU: Float = 0.0
         
+        //Looping through each hop in the list
         for hop in hopStore.hops{
             
             //HFU calculation variables
@@ -181,57 +205,81 @@ struct ContentView: View {
             let AE: Float = 100 / pow(100.0, (Float(hop.boilTime) / 25.0))
             
             sumHAU += MAAU * AAAPV * (AE / 100.0)
-        }
+            
+        }//END for hop in hopStore.hops{
+        
         return sumHAU
-    }
+        
+    }//END func calculateTotalHAU(hopStore: HopStore, sweetWart: Float )->Float
     
     
-}
+}//END struct ContentView: View
 
 
 
 
 //SUBVIEW
 //Shows a list of the hops which can be selected
-struct ListCell: View {
+struct ListCell: View
+{
     var hop: Hop
-    var body: some View {
-        VStack{
-            NavigationLink(destination: HopDetail(selectedHop: hop)) {
-                HStack {
+    var body: some View
+    {
+        VStack
+        {
+            NavigationLink(destination: HopDetail(selectedHop: hop))
+            {
+                HStack
+                {
                     Image(hop.imageName)
                         .resizable()
                         .aspectRatio(contentMode:.fit)
                         .frame(width: 100, height: 60)
                     Text(hop.name)
-                }
-            }
-        }
-    }
-}
-struct ListVal: View {
+                    
+                }//END HStack
+                
+            }//END NavigationLink(destination: HopDetail(selectedHop: hop))
+            
+        }//END VStack
+        
+    }//END var body: some View
+    
+}//END struct ListCell: View
+
+
+struct ListVal: View
+{
     var hop: Hop
-    var body: some View {
-        VStack{
+    var body: some View
+    {
+        VStack
+        {
             Text("Hop weight \(hop.weight)")
         }
-    }
-}
+        
+    }//END var body: some View
+    
+}//END struct ListVal: View
 
-struct Wart: View {
+struct Wart: View
+{
     @State private var sweetWartContentStr: String = "0.0"
     @Binding var isDoBrew: Bool
-    var body: some View{
+    var body: some View
+    {
         DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
     }
-}
+}//END struct Wart: View
 
 //Basic content view structure
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+struct ContentView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
         ContentView()
     }
-}
+}//END struct ContentView_Previews: PreviewProvider
 
 
 
