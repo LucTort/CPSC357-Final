@@ -39,7 +39,6 @@ struct ContentView: View
                     .padding(.all)
                 
                 //END display hop data
-                
                 Button(action: { self.isDoBrew = !self.isDoBrew })
                 {
                     Text("Go Back")
