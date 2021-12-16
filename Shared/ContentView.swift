@@ -14,7 +14,7 @@ struct ContentView: View
 {
     @StateObject private var hopStore : HopStore = HopStore(hops: hopData)
     @State var isDoBrew: Bool = false
-    @State private var sweetWartContentStr: String = "0.0"
+    @State private var sweetWartContentStr: String = "0.100"
     @State var inputScreen: Bool = false;
     var body: some View
     {
@@ -70,7 +70,7 @@ struct ContentView: View
                     {
                         Text("Add")
                     }, trailing: EditButton())
-                    DataInput(title: "Sweet Wart Content", userInput: $sweetWartContentStr)
+                    DataInput(title: "Sweet Wart Content (0.001 - 1.00)", userInput: $sweetWartContentStr)
                     
                     //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
                     Button(action: { self.isDoBrew = !self.isDoBrew } )
