@@ -30,7 +30,7 @@ struct AddNewHop: View
     var body: some View {
         Form {
             Section(header: Text("Hop Details")) {
-                Image("hop1")
+                Image("hop2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
@@ -52,7 +52,7 @@ struct AddNewHop: View
     //Creates a new Hop object with the relevant data and adds it to the hopStore
     func addNewHop() {
         let newHop = Hop(id: UUID().uuidString,
-                         name: name, volume: Float(volumeStr) ?? 0, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "340px-Hop-Boy-FL" )
+                         name: name, volume: Float(volumeStr) ?? 0, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "hop2" )
         hopStore.hops.append(newHop)
         }
     }
