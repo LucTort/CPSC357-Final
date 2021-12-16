@@ -51,6 +51,7 @@ struct AddNewHop: View
             Button(action: addNewHop)
             {
                 Text("Add Hop")
+                    //If there is no input, the button becomes disabled
                     .disabled((self.name != "" &&
                                self.volumeStr != "" &&
                                self.weightStr != "" &&
