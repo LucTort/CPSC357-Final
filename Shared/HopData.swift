@@ -11,21 +11,29 @@
 import UIKit
 import SwiftUI
 var hopData: [Hop] = loadJson("hopData.json")
-func loadJson<T: Decodable>(_ filename: String) -> T {
+func loadJson<T: Decodable>(_ filename: String) -> T
+{
     let data: Data
     guard let file = Bundle.main.url(forResource: filename,
                                      withExtension: nil)
-    else {
+    else
+    {
         fatalError("\(filename) not found.")
     }
-    do {
+    do
+    {
         data = try Data(contentsOf: file)
-    } catch {
+    }
+    catch
+    {
         fatalError("Could not load \(filename): \(error)")
     }
-    do {
+    do
+    {
         return try JSONDecoder().decode(T.self, from: data)
-    } catch {
+    }
+    catch
+    {
         fatalError("Unable to parse \(filename): \(error)")
     }
 }
