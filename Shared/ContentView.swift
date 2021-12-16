@@ -77,7 +77,9 @@ struct ContentView: View
                     {
                         
                         Text("Do the Brew")
-                            .disabled( sweetWartContentStr == "" ? true : false)
+                            .disabled(self.sweetWartContentStr != "" &&
+                                      (Float(self.sweetWartContentStr) ?? 0) > 0.100 &&
+                                      (Float(self.sweetWartContentStr) ?? 0) <= 1.000 ? false : true)
                             .padding(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10.0)
