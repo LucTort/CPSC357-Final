@@ -11,14 +11,14 @@ import SwiftUI
 struct AddNewHop: View
 {
     @StateObject var hopStore : HopStore
-    @State private var name: String = ""
-    @State private var volumeStr: String = "0.0"
+    @State private var name: String = "hop name"
+    @State private var volumeStr: String = "1.0"
     @State private var volume: Float = 0.0
-    @State private var weightStr: String = "0.0"
+    @State private var weightStr: String = "1.0"
     @State private var weight: Float = 0.0
-    @State private var alphaAcidContentStr: String = "2"
+    @State private var alphaAcidContentStr: String = "2.0"
     @State private var alphaAcidContent: Float = 0.0
-    @State private var boilTimeStr: String = "Boil tyme"
+    @State private var boilTimeStr: String = "1"
     @State private var boilTime: Int = 0
     
     
