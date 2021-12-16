@@ -21,6 +21,9 @@ struct AddNewHop: View
     @State private var boilTimeStr: String = "Boil tyme"
     @State private var boilTime: Int = 0
     
+    
+    @State private var isEnabled: Bool = false;
+    
     let formatter: NumberFormatter =
     {
         let formatter = NumberFormatter()
@@ -44,9 +47,15 @@ struct AddNewHop: View
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContentStr)
                 DataInput(title: "Boil Time (min)", userInput: $boilTimeStr)
             }//END Section(header: Text("Hop Details"))
+            
             Button(action: addNewHop)
             {
                 Text("Add Hop")
+                    .disabled((self.name != "" &&
+                               self.volumeStr != "" &&
+                               self.weightStr != "" &&
+                               self.alphaAcidContentStr != "") &&
+                               self.boilTimeStr != "" ? false : true)
             
             }//END Button(action: addNewHop)
             
