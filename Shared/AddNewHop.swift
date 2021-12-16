@@ -11,7 +11,7 @@ import SwiftUI
 struct AddNewHop: View
 {
     @StateObject var hopStore : HopStore
-    @State private var name: String = "hop name"
+    @State private var name: String = "Hop Name"
     @State private var volumeStr: String = "1.0"
     @State private var volume: Float = 0.0
     @State private var weightStr: String = "1.0"
@@ -42,10 +42,10 @@ struct AddNewHop: View
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 DataInput(title: "Name", userInput: $name)
-                DataInput(title: "Brew Volume (gal)", userInput: $volumeStr)
-                DataInput(title: "Weight (oz)", userInput: $weightStr)
-                DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContentStr)
-                DataInput(title: "Boil Time (min)", userInput: $boilTimeStr)
+                DataInput(title: "Brew Volume (1 - 20 gal)", userInput: $volumeStr)
+                DataInput(title: "Weight (0.01 - 100 oz)", userInput: $weightStr)
+                DataInput(title: "Alpha Acid Content (2.0 - 6.0 %)", userInput: $alphaAcidContentStr)
+                DataInput(title: "Boil Time (1 - 90 min)", userInput: $boilTimeStr)
             }//END Section(header: Text("Hop Details"))
             
             Button(action: addNewHop)
