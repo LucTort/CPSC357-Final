@@ -43,6 +43,7 @@ struct HopDetail: View
                             .font(.body)
                         Spacer()
                     }//END Group
+                    
                     Text("Weight (oz)")
                         .font(.headline)
                     Text(String(format: "%f", selectedHop.weight))
@@ -53,10 +54,15 @@ struct HopDetail: View
                     Text(String(selectedHop.boilTime))
                         .font(.body)
                     Spacer()
+                    
                 }//END VStack (alignment: .leading)
+                
             }//END Section(header: Text("Hop Details"))
+            
         }//END Form
+        
     }//END  var body: some View
+    
 }//END struct HopDetail: View
 
 //Creates structure for the preview to use
