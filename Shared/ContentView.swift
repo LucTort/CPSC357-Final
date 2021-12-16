@@ -77,15 +77,14 @@ struct ContentView: View
                     {
                         
                         Text("Do the Brew")
-                            .disabled(self.sweetWartContentStr != "" &&
-                                      (Float(self.sweetWartContentStr) ?? 0) > 0.100 &&
-                                      (Float(self.sweetWartContentStr) ?? 0) <= 1.000 ? false : true)
                             .padding(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(lineWidth: 2.0)
                             )
-                    }
+                    }.disabled(self.sweetWartContentStr != "" &&
+                              (Float(self.sweetWartContentStr) ?? 0) > 0.100 &&
+                              (Float(self.sweetWartContentStr) ?? 0) <= 1.000 ? false : true)
                     //END Button(action: { self.isDoBrew = !self.isDoBrew })
                     
                 }//END VStack

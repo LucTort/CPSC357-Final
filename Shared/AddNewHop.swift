@@ -51,22 +51,23 @@ struct AddNewHop: View
             Button(action: addNewHop)
             {
                 Text("Add Hop")
-                    //If there is no input, the button becomes disabled
-                    .disabled((self.name != "" &&
-                               self.volumeStr != "" &&
-                               (Float(self.volumeStr) ?? 0) >= 1.0 &&
-                               (Float(self.volumeStr) ?? 0) <= 20.0 &&
-                               self.weightStr != "" &&
-                               (Float(self.weightStr) ?? 0) >= 0.01 &&
-                               (Float(self.weightStr) ?? 0) <= 100.0 &&
-                               self.alphaAcidContentStr != "") &&
-                               (Float(self.alphaAcidContentStr) ?? 0) >= 2.0 &&
-                               (Float(self.alphaAcidContentStr) ?? 0) <= 6.0 &&
-                               self.boilTimeStr != "" &&
-                               (Int(self.boilTimeStr) ?? 0) > 0 &&
-                               (Int(self.boilTimeStr) ?? 0) <= 90 ? false : true)
-            
+                    
             }//END Button(action: addNewHop)
+            //If there is no input, the button becomes disabled
+            .disabled((self.name != "" &&
+                       self.volumeStr != "" &&
+                       (Float(self.volumeStr) ?? 0) >= 1.0 &&
+                       (Float(self.volumeStr) ?? 0) <= 20.0 &&
+                       self.weightStr != "" &&
+                       (Float(self.weightStr) ?? 0) >= 0.01 &&
+                       (Float(self.weightStr) ?? 0) <= 100.0 &&
+                       self.alphaAcidContentStr != "") &&
+                       (Float(self.alphaAcidContentStr) ?? 0) >= 2.0 &&
+                       (Float(self.alphaAcidContentStr) ?? 0) <= 6.0 &&
+                       self.boilTimeStr != "" &&
+                       (Int(self.boilTimeStr) ?? 0) > 0 &&
+                       (Int(self.boilTimeStr) ?? 0) <= 90 ? false : true)
+    
             
         }//Form
         
