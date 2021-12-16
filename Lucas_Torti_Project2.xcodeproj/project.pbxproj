@@ -51,7 +51,7 @@
 /* Begin PBXFileReference section */
 		AA522BBB2728978F00876F6A /* Lucas_Torti_Project2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lucas_Torti_Project2App.swift; sourceTree = "<group>"; };
 		AA522BBC2728978F00876F6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AA522BC22728979100876F6A /* CPSC357_Project_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC357_Project_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA522BC22728979100876F6A /* Art of Brewing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Art of Brewing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA522BC82728979200876F6A /* CPSC357_Project_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC357_Project_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA522BCA2728979200876F6A /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		AA522BCF2728979200876F6A /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +131,7 @@
 		AA522BC32728979100876F6A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA522BC22728979100876F6A /* CPSC357_Project_2.app */,
+				AA522BC22728979100876F6A /* Art of Brewing.app */,
 				AA522BC82728979200876F6A /* CPSC357_Project_2.app */,
 				AA522BCF2728979200876F6A /* Tests iOS.xctest */,
 				AA522BDB2728979200876F6A /* Tests macOS.xctest */,
@@ -182,7 +182,7 @@
 			);
 			name = "CPSC357_Project_2 (iOS)";
 			productName = "CPSC357_Project_2 (iOS)";
-			productReference = AA522BC22728979100876F6A /* CPSC357_Project_2.app */;
+			productReference = AA522BC22728979100876F6A /* Art of Brewing.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AA522BC72728979200876F6A /* CPSC357_Project_2 (macOS) */ = {
@@ -516,7 +516,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "LucTort.CPSC357-Project-2";
-				PRODUCT_NAME = CPSC357_Project_2;
+				PRODUCT_NAME = "Art of Brewing";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -546,7 +546,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "LucTort.CPSC357-Project-2";
-				PRODUCT_NAME = CPSC357_Project_2;
+				PRODUCT_NAME = "Art of Brewing";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
