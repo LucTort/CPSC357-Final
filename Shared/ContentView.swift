@@ -94,7 +94,7 @@ struct ContentView: View
         {
             VStack
             {
-                Text("Welcome to HomeBrew (not the package manager)!")
+                Text("Art of Brewing!")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.black)
