@@ -70,7 +70,7 @@ struct ContentView: View
                     {
                         Text("Add")
                     }, trailing: EditButton())
-                    DataInput(title: "Sweet Wart Content (0.001 - 1.00)", userInput: $sweetWartContentStr)
+                    DataInput(title: "Sweet Wart Content (0.100 - 1.00)", userInput: $sweetWartContentStr)
                     
                     //https://www.simpleswiftguide.com/how-to-create-button-in-swiftui/
                     Button(action: { self.isDoBrew = !self.isDoBrew } )
@@ -83,7 +83,7 @@ struct ContentView: View
                                     .stroke(lineWidth: 2.0)
                             )
                     }.disabled(self.sweetWartContentStr != "" &&
-                              (Float(self.sweetWartContentStr) ?? 0) > 0.100 &&
+                              (Float(self.sweetWartContentStr) ?? 0) >= 0.100 &&
                               (Float(self.sweetWartContentStr) ?? 0) <= 1.000 ? false : true)
                     //END Button(action: { self.isDoBrew = !self.isDoBrew })
                     
