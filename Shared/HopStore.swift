@@ -9,17 +9,20 @@
 
 import SwiftUI
 import Combine
-class HopStore : ObservableObject {
+
+class HopStore : ObservableObject
+{
     @Published var hops: [Hop]
     @Published var totalIBU: Float
     @Published var totalHFU: Float
     @Published var totalHAU: Float
     
-    init (hops: [Hop] = []) {
+    init (hops: [Hop] = [])
+    {
         self.hops = hops
         totalIBU = 0
         totalHFU = 0
         totalHAU = 0
-    }
+    }//END init (hops: [Hop] = [])
     
-}
+}//END class HopStore : ObservableObject
