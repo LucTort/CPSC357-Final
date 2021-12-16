@@ -21,15 +21,19 @@ struct AddNewHop: View
     @State private var boilTimeStr: String = "Boil tyme"
     @State private var boilTime: Int = 0
     
-    let formatter: NumberFormatter = {
+    let formatter: NumberFormatter =
+    {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter
-    }()
+    }()//END let formatter: NumberFormatter =
     
-    var body: some View {
-        Form {
-            Section(header: Text("Hop Details")) {
+    var body: some View
+    {
+        Form
+        {
+            Section(header: Text("Hop Details"))
+            {
                 Image("hop2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -39,26 +43,28 @@ struct AddNewHop: View
                 DataInput(title: "Weight (oz)", userInput: $weightStr)
                 DataInput(title: "Alpha Acid Content", userInput: $alphaAcidContentStr)
                 DataInput(title: "Boil Time (min)", userInput: $boilTimeStr)
-            }
-            Button(action: addNewHop) {
+            }//END Section(header: Text("Hop Details"))
+            Button(action: addNewHop)
+            {
                 Text("Add Hop")
             
-            }
+            }//END Button(action: addNewHop)
             
-        }
+        }//Form
         
-    }
+    }//END var body: some View
     
     //Creates a new Hop object with the relevant data and adds it to the hopStore
-    func addNewHop() {
-        let newHop = Hop(id: UUID().uuidString,
-                         name: name, volume: Float(volumeStr) ?? 0, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "hop2" )
+    func addNewHop()
+    {
+        let newHop = Hop(id: UUID().uuidString,name: name, volume: Float(volumeStr) ?? 0, weight: Float(weightStr) ?? 0, alphaAcidContent: Float(alphaAcidContentStr) ?? 0, boilTime: Int(boilTimeStr) ?? 0, imageName: "hop2" )
         hopStore.hops.append(newHop)
-        }
-    }
+    }//END func addNewHop()
+}//END struct AddNewHop: View
     
 //Creates a new preview to be shown by ContentView
-struct AddNewHop_Previews: PreviewProvider {
+struct AddNewHop_Previews: PreviewProvider
+{
     static var previews: some View
     {
         AddNewHop(hopStore: HopStore(hops: hopData))
@@ -67,16 +73,19 @@ struct AddNewHop_Previews: PreviewProvider {
 
 
 //Provides a structure fo the user to input data relevant to the Hop object
-struct DataInput: View {
+struct DataInput: View
+{
     var title: String
     @Binding var userInput: String
-    var body: some View {
-        VStack(alignment: HorizontalAlignment.leading) {
+    var body: some View
+    {
+        VStack(alignment: HorizontalAlignment.leading)
+        {
             Text(title)
                 .font(.headline)
             TextField("Enter \(title)", text: $userInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-        }
+        }//END VStack(alignment: HorizontalAlignment.leading)
         .padding()
-    }
-}
+    }//END var body: some View
+}//END struct DataInput: View
