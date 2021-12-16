@@ -96,6 +96,7 @@ struct ContentView: View
             {
                 Image("BeerIcon")//comeback
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                 Text("The Art of Brewing!")
                     .font(.largeTitle)
                     .fontWeight(.bold)
