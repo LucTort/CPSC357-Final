@@ -31,6 +31,7 @@ struct HopDetail: View
                 {
                     Group //This group is here because Swift doesn't like having too many things in a VStack
                     {
+                        //Conerting values to string to output
                         Text("Alpha Acid Content")
                             .font(.headline)
                         Text(String(format: "%f", selectedHop.alphaAcidContent))
