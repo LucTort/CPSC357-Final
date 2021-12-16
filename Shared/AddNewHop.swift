@@ -30,7 +30,7 @@ struct AddNewHop: View
     var body: some View {
         Form {
             Section(header: Text("Hop Details")) {
-                Image("340px-Hop-Boy-FL")
+                Image("hop1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()

@@ -15,10 +15,8 @@
 		AA522BE42728979200876F6A /* Lucas_Torti_Project2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA522BBB2728978F00876F6A /* Lucas_Torti_Project2App.swift */; };
 		AA522BE52728979200876F6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA522BBC2728978F00876F6A /* ContentView.swift */; };
 		AA522BE62728979200876F6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA522BBC2728978F00876F6A /* ContentView.swift */; };
-		AA522BE72728979200876F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA522BBD2728979100876F6A /* Assets.xcassets */; };
-		AA522BE82728979200876F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA522BBD2728979100876F6A /* Assets.xcassets */; };
-		AAAE7E26272B2C5100F68FA7 /* CarAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAE7E25272B2C5100F68FA7 /* CarAssets.xcassets */; };
-		AAAE7E27272B2C5100F68FA7 /* CarAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAE7E25272B2C5100F68FA7 /* CarAssets.xcassets */; };
+		AAAE7E26272B2C5100F68FA7 /* HopAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAE7E25272B2C5100F68FA7 /* HopAssets.xcassets */; };
+		AAAE7E27272B2C5100F68FA7 /* HopAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAE7E25272B2C5100F68FA7 /* HopAssets.xcassets */; };
 		AAF93B87272E3BD7000A2E18 /* hopData.json in Resources */ = {isa = PBXBuildFile; fileRef = AAF93B86272E3BD7000A2E18 /* hopData.json */; };
 		AAF93B88272E3BD7000A2E18 /* hopData.json in Resources */ = {isa = PBXBuildFile; fileRef = AAF93B86272E3BD7000A2E18 /* hopData.json */; };
 		AAF93B8A272E3CF2000A2E18 /* Hop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF93B89272E3CF2000A2E18 /* Hop.swift */; };
@@ -53,7 +51,6 @@
 /* Begin PBXFileReference section */
 		AA522BBB2728978F00876F6A /* Lucas_Torti_Project2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lucas_Torti_Project2App.swift; sourceTree = "<group>"; };
 		AA522BBC2728978F00876F6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AA522BBD2728979100876F6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA522BC22728979100876F6A /* CPSC357_Project_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC357_Project_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA522BC82728979200876F6A /* CPSC357_Project_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC357_Project_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA522BCA2728979200876F6A /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -63,7 +60,7 @@
 		AA522BDB2728979200876F6A /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA522BDF2728979200876F6A /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		AA522BE12728979200876F6A /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		AAAE7E25272B2C5100F68FA7 /* CarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CarAssets.xcassets; sourceTree = "<group>"; };
+		AAAE7E25272B2C5100F68FA7 /* HopAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HopAssets.xcassets; sourceTree = "<group>"; };
 		AAF93B86272E3BD7000A2E18 /* hopData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hopData.json; sourceTree = "<group>"; };
 		AAF93B89272E3CF2000A2E18 /* Hop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hop.swift; sourceTree = "<group>"; };
 		AAF93B8C272E3CFB000A2E18 /* HopDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HopDetail.swift; sourceTree = "<group>"; };
@@ -126,8 +123,7 @@
 				AAF93B95272E3D0E000A2E18 /* HopData.swift */,
 				AAF93B89272E3CF2000A2E18 /* Hop.swift */,
 				AAF93B86272E3BD7000A2E18 /* hopData.json */,
-				AA522BBD2728979100876F6A /* Assets.xcassets */,
-				AAAE7E25272B2C5100F68FA7 /* CarAssets.xcassets */,
+				AAAE7E25272B2C5100F68FA7 /* HopAssets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -295,8 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF93B87272E3BD7000A2E18 /* hopData.json in Resources */,
-				AA522BE72728979200876F6A /* Assets.xcassets in Resources */,
-				AAAE7E26272B2C5100F68FA7 /* CarAssets.xcassets in Resources */,
+				AAAE7E26272B2C5100F68FA7 /* HopAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF93B88272E3BD7000A2E18 /* hopData.json in Resources */,
-				AA522BE82728979200876F6A /* Assets.xcassets in Resources */,
-				AAAE7E27272B2C5100F68FA7 /* CarAssets.xcassets in Resources */,
+				AAAE7E27272B2C5100F68FA7 /* HopAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

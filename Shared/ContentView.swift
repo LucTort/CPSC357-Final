@@ -14,7 +14,7 @@ struct ContentView: View {
     @StateObject private var hopStore : HopStore = HopStore(hops: hopData)
     @State var isDoBrew: Bool = false
     @State private var sweetWartContentStr: String = "0.0"
-    
+    @State var inputScreen: Bool = false;
     var body: some View
     {
         if (isDoBrew)
@@ -50,7 +50,7 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        else
+        else if(inputScreen)
         {
             NavigationView
             {
@@ -84,6 +84,26 @@ struct ContentView: View {
                     }
                     
                     }
+            }
+        } else{
+            VStack{
+                Text("Welcome to HomeBrew (not the package manager)!")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.black)
+                    .multilineTextAlignment(.center)
+                
+                Button(action: {
+                    self.inputScreen = !self.inputScreen
+                }) {
+                    Text("Let's get brewing!")
+                        .padding(10.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .stroke(lineWidth: 2.0)
+                        )
+                    
+                }
             }
         }
     }
