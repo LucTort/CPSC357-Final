@@ -81,6 +81,7 @@ struct ContentView: View
                                 RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(lineWidth: 2.0)
                             )
+                            .padding()
                     }.disabled(self.sweetWartContentStr != "" &&
                               (Float(self.sweetWartContentStr) ?? 0) >= 0.100 &&
                               (Float(self.sweetWartContentStr) ?? 0) <= 1.000 ? false : true)
